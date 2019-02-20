@@ -12,7 +12,7 @@ module.exports = {
 	| define a driver too.
 	|
 	*/
-	connection: Env.get('MAIL_CONNECTION', 'sparkpost'),
+	connection: 'sparkpost',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ module.exports = {
 	*/
 	sparkpost: {
 		driver: 'sparkpost',
-		apiKey: Env.get('SPARKPOST_API_KEY'),
+		apiKey: '465dae2ea093efe9bf298fd4f7ab0673855d370d',
 		extras: {
 		// options: {
 		//   sandbox: true,

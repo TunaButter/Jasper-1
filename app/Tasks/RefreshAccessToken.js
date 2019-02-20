@@ -7,14 +7,14 @@ const Token = use('App/Models/Token');
 // The credentials for Microsoft Graph
 const credentials = {
 	client: {
-		id: Env.get('MICROSOFT_APP_ID'),
-		secret: Env.get('MICROSOFT_APP_PASSWORD')
+		id: '292802e3-a198-4e18-ab66-8ea5e7968922',
+		secret: 'beguX64??cjmDDRVIJ676+!'
 	},
 
 	auth: {
-		tokenHost: Env.get('MICROSOFT_HOST'),
-		authorizePath: Env.get('MICROSOFT_AUTHORIZE_ENDPOINT'),
-		tokenPath: Env.get('MICROSOFT_TOKEN_ENDPOINT')
+		tokenHost: 'https://login.microsoftonline.com',
+		authorizePath: 'common/oauth2/v2.0/authorize',
+		tokenPath: 'common/oauth2/v2.0/token'
 	}
 };
 const Oauth2 = require('simple-oauth2').create(credentials);

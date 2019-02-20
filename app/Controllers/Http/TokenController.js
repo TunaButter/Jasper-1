@@ -6,14 +6,14 @@ const JWT = require('jsonwebtoken');
 // The credentials for Microsoft Graph
 const credentials = {
 	client: {
-		id: Env.get('MICROSOFT_APP_ID'),
-		secret: Env.get('MICROSOFT_APP_PASSWORD')
+		id: '292802e3-a198-4e18-ab66-8ea5e7968922',
+		secret: 'beguX64??cjmDDRVIJ676+!'
 	},
 
 	auth: {
-		tokenHost: Env.get('MICROSOFT_HOST'),
-		authorizePath: Env.get('MICROSOFT_AUTHORIZE_ENDPOINT'),
-		tokenPath: Env.get('MICROSOFT_TOKEN_ENDPOINT')
+		tokenHost: 'https://login.microsoftonline.com',
+		authorizePath: 'common/oauth2/v2.0/authorize',
+		tokenPath: 'common/oauth2/v2.0/token'
 	}
 };
 const Oauth2 = require('simple-oauth2').create(credentials);
@@ -44,8 +44,8 @@ class TokenController {
 	 */
 	async getAuthUrl ({ response }) {
 		const authUrl = await Oauth2.authorizationCode.authorizeURL({
-			redirect_uri: Env.get('MICROSOFT_REDIRECT_URI'),
-			scope: Env.get('MICROSOFT_SCOPES')
+			redirect_uri: 'http://localhost:8080/authorize',
+			scope: 'user.read calendars.readwrite openid profile offline_access'
 		});
 
 		return response.redirect(authUrl);
@@ -74,12 +74,12 @@ class TokenController {
 		try {
 			let result = await Oauth2.authorizationCode.getToken({
 				code: authCode,
-				redirect_uri: Env.get('MICROSOFT_REDIRECT_URI'),
-				scope: Env.get('MICROSOFT_SCOPES')
+				redirect_uri: 'http://localhost:8080/authorize',
+				scope: 'user.read calendars.readwrite openid profile offline_access'
 			});
 
 			const token = await Oauth2.accessToken.create(result);
-
+			console.log(token)
 			saveToDatabase(token);
 
 			return token.token.access_token;

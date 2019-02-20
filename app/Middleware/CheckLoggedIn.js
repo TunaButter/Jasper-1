@@ -38,7 +38,7 @@ class CheckAdminUserType {
 			try {
 				const authenticator = auth.authenticator(scheme);
 				await authenticator.check();
-				console.log(auth.user.role);
+				// console.log(auth.user.role);
 
 				debug('authenticated using %s scheme', scheme);
 

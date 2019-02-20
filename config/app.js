@@ -15,7 +15,7 @@ module.exports = {
 	| other location.
 	|
 	*/
-	name: Env.get('APP_NAME', 'AdonisJs'),
+	name: 'AdonisJs',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -27,7 +27,7 @@ module.exports = {
 	|
 	*/
 
-	appKey: Env.getOrFail('APP_KEY'),
+	appKey: 'B1o5y3kHxEYveK9ihxlTcq5VIVCEUrG3',
 
 	http: {
 		/*
@@ -105,7 +105,7 @@ module.exports = {
 		| production to optimize view loading time.
 		|
 		*/
-		cache: Env.get('CACHE_VIEWS', true)
+		cache: true
 	},
 
 	static: {

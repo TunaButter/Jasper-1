@@ -46,7 +46,7 @@ class UserController {
 	 * @param {Object} Context The context object.
 	 */
 	async create ({ request, response, auth }) {
-		const confirmationRequired = Env.get('REGISTRATION_CONFIRMATION', false);
+		const confirmationRequired = false;
 
 		if (confirmationRequired) {
 			return this.createWithVerifyingEmail({ request, response });

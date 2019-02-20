@@ -16,7 +16,7 @@ module.exports = {
 	| interacting with SQL databases.
 	|
 	*/
-	connection: Env.get('DB_CONNECTION', 'sqlite'),
+	connection: 'sqlite',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ module.exports = {
 	sqlite: {
 		client: 'sqlite3',
 		connection: {
-			filename: Helpers.databasePath(`${Env.get('DB_DATABASE', 'development')}.db`)
+			filename: Helpers.databasePath('japer_dev.db')
 		},
 		useNullAsDefault: true
 	},
