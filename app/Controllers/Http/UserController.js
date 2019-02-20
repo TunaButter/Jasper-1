@@ -94,7 +94,7 @@ class UserController {
 			<h2> Welcome to Jarvis, ${userInfo.firstname} </h2>
     		<p>
       			Please click the following URL into your browser: 
-      			https://jarvis-jarvis.7e14.starter-us-west-2.openshiftapps.com:8080/newUser?hash=${hash}
+      			https://thejarvis-jarvis.7e14.starter-us-west-2.openshiftapps.com:8080/newUser?hash=${hash}
     		</p>
     	`;
 
@@ -238,7 +238,7 @@ class UserController {
       			<h2> Password Reset Request </h2>
       			<p>
         			We received a request to reset your password. If you asked to reset your password, please click the following URL: 
-        			https://jarvis-jarvis.7e14.starter-us-west-2.openshiftapps.com:8080/newPassword?hash=${hash}
+        			https://thejarvis-jarvis.7e14.starter-us-west-2.openshiftapps.com:8080/newPassword?hash=${hash}
       			</p>
 			`;
 
