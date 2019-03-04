@@ -16,3 +16,6 @@ database/jasper_dev.db
 
 # Database scripts
 *.sql
+
+# yarn error log
+yarn-error.log
