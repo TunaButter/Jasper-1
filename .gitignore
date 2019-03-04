@@ -11,11 +11,5 @@ public/uploads/
 # the vscode config file
 .vscode
 
-# The development sqlite file
-database/jasper_dev.db
-
-# Database scripts
-*.sql
-
 # yarn error log
 yarn-error.log
